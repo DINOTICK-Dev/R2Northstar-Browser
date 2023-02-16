@@ -14,4 +14,3 @@ Ion Server Browser is a simple server browser made in python for the Titanfall 2
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-print(totalplayers)
