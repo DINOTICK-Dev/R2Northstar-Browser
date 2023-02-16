@@ -1,43 +1,17 @@
 import requests
 import os
+from func.playcnt import *
+from func.servbrow import *
+from func.servcnt import *
 
-r = requests.get("https://northstar.tf/client/servers")     # get the server list
+"""
+Ion Server Browser
+Made by DINOTICK
+Ion Server Browser is a simple server browser made in python for the Titanfall 2 community mod "Northstar" that has some tools for the northstar serverbrowser
+"""
 
-serverindex = 0
-def ServerGet():
-  if r.status_code == 200:
-    for server in r.json():    # iterate through server list
-  
-      try:
-        serverregion = server["region"]
-      except:
-        serverregion = ["Unknown"]
-        
-      if server["hasPassword"] == True:
-        serverpass = "[Password Protected]"
-      else:
-        serverpass = ""  
-      
-      
-      servername = server["name"]
-      playercount = server["playerCount"]
-      playermax = server["maxPlayers"]
-      servermap = server["map"]
-        
-      print(servername + "     " + serverpass)
-      print("Map: " + servermap)
-      
-      try:
-        print("Region: " + serverregion)
-      except:
-        print("Region: Unknown")
-        
-      print("Playercount: " + "[" + str(playercount) + "/" + str(playermax) + "]")
-      print("=========================")
-      
-      break
-  
-  else:
-    print("Error gathering information")
 
-ServerGet()
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
+
+print(totalplayers)
