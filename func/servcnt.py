@@ -11,7 +11,5 @@ def ServerCountGet():
       servercount = servercount+1
   else:
     print("Error gathering information")
-  
-  print(servercount)
 
 ServerCountGet()
