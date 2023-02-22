@@ -12,4 +12,7 @@ def ServerCountGet():
   else:
     print("Error gathering information")
 
+def refresh():
+  ServerCountGet()
+
 ServerCountGet()
