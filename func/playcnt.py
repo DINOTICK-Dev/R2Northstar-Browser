@@ -15,4 +15,7 @@ def PlayerCountGet():
       totalplayers = totalplayers+playercount
       maxplayers = maxplayers+playermax
 
+def refresh():
+  PlayerCountGet()
+
 PlayerCountGet()
