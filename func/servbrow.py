@@ -42,4 +42,8 @@ def ServerGet():
 
   else:
     print("Error gathering information")
+
+def refresh():
+  ServerGet()
+  
 ServerGet()
