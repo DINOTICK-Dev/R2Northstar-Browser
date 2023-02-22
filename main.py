@@ -1,7 +1,7 @@
-import requests
-import sys
-import os
-import time
+import requests     # Used to grab information on the Northstar server browser from the internet (however it's not used in this file)
+import sys     # I kinda forgor
+import os     # I also may or may not have forgor
+import time     # Literally only used for time.sleep() (aka used for error messages)
 from func.playcnt import *
 from func.servbrow import *
 from func.servcnt import *
@@ -15,12 +15,12 @@ Ion Server Browser
 Made by DINOTICK
 """
 
-def ErrorMSG(sleeptime):
+def ErrorMSG(sleeptime):     # Idk I just felt like making this a function (I may remake this so it also handles the error output and not just the exiting and time.sleep)
   time.sleep(sleeptime)
   sys.exit()
 
 
-def cls():
+def cls():     # Simple "clear" console function that checks if you're using windows or not and then wipes the screen
   try:
     os.system('cls' if os.name=='nt' else 'clear')
   except:
@@ -28,7 +28,7 @@ def cls():
     ErrorMSG(2)
     
 
-def RefreshAll(): 
+def RefreshAll():     # Lazy refresh function I made that basically just runs the refresh function in the scripts inside of the func folder
   try:
     playref()
   except:
@@ -46,7 +46,7 @@ def RefreshAll():
     ErrorMSG(2)
 
 
-def ShowCredits():
+def ShowCredits():     # Could use some cleaning up
   print("[orange1]Made by DINOTICK[/orange1]")
   print("[red]Youtube:  https://www.youtube.com/@dinotick[/red]")
   print("[bright_black]Github:  https://github.com/DINOTICK-Dev[/bright_black]")
