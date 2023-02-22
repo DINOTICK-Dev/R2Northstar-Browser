@@ -19,6 +19,7 @@ def ErrorMSG(sleeptime):
   time.sleep(sleeptime)
   sys.exit()
 
+
 def cls():
   try:
     os.system('cls' if os.name=='nt' else 'clear')
@@ -26,6 +27,7 @@ def cls():
     print("[red]There was an error wiping the screen, are you on a supported operating system? (Linux, Windows)[/red]")
     ErrorMSG(2)
     
+
 def RefreshAll(): 
   try:
     playref()
@@ -43,8 +45,16 @@ def RefreshAll():
     print("[red]There was an error obtaining server-based information.[/red]")
     ErrorMSG(2)
 
+
 def ShowCredits():
-  print("Wow lots of peoples names here")
+  print("[orange1]Made by DINOTICK[/orange1]")
+  print("[red]Youtube:  https://www.youtube.com/@dinotick[/red]")
+  print("[bright_black]Github:  https://github.com/DINOTICK-Dev[/bright_black]")
+  print("[dodger_blue2]Discord:  DINOTICK#6969[/dodger_blue2]")
+  print("[bold orange1]Press enter to go back[/bold orange1]")
+  input("")
+  runtime()
+
 
 def runtime():
   cls()
@@ -57,6 +67,7 @@ def runtime():
   if inputinfo == "2":
     print("Coming Soon (WIP)")
   if inputinfo == "3":
+    cls()
     ShowCredits()
 
 runtime()
