@@ -2,13 +2,13 @@ import requests     # Used to grab information on the Northstar server browser f
 import sys     # I kinda forgor
 import os     # I also may or may not have forgor
 import time     # Literally only used for time.sleep() (aka used for error messages)
-from func.playcnt import *
-from func.servbrow import *
-from func.servcnt import *
-from func.playcnt import refresh as playref
-from func.servbrow import refresh as browref
-from func.servcnt import refresh as servref
-from rich import print
+from func.playcnt import *     # Imports all functions from the files/scripts in the func folder
+from func.servbrow import *     # Imports all functions from the files/scripts in the func folder
+from func.servcnt import *     # Imports all functions from the files/scripts in the func folder
+from func.playcnt import refresh as playref     # Imports "playref" function (refresh function) from playercount script
+from func.servbrow import refresh as browref    # Imports "browref" function (refresh function) from serverbrowser script
+from func.servcnt import refresh as servref    # Imports "servref" function (refresh function) from servercount script
+from rich import print     # Adds fancy-shamncy text formatting
 
 """
 Ion Server Browser
@@ -56,7 +56,7 @@ def ShowCredits():     # Could use some cleaning up
   runtime()
 
 
-def runtime():
+def runtime():     # Main function, used to run everything and piece it all together
   cls()
   RefreshAll()
   print("[orange3]Welcome to Ion Mod Manager[/orange3]")
@@ -70,4 +70,4 @@ def runtime():
     cls()
     ShowCredits()
 
-runtime()
+runtime()     # Starts the script pretty much
