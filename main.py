@@ -55,6 +55,39 @@ def ShowCredits():     # Could use some cleaning up
   input("")
   runtime()
 
+def PrintInfo(serverpage):
+  print("[orange1]===============[/orange1]")
+  for x in range(serverpage, serverpage+5):
+    if serverdict[x]["hasPassword"] == True:
+      serverpass = "[Password Protected]"
+    else:
+      serverpass = ""
+    print("[orange1]Name: "+serverdict[x]["name"] + "    " + serverpass+"[/orange1]")
+    print("[orange1]Playercount: [" + str(serverdict[x]["playerCount"])+"/"+str(serverdict[x]["maxPlayers"])+"][/orange1]")
+    try:
+      print("[orange1]Region: " + serverdict[x]["region"]+"[/orange1]")
+    except:
+      print("[orange1]Region: Unkown[/orange1]")
+    print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
+    print("[orange1]=================[/orange1]")
+
+def ShowBrowser():
+  indexedvariable = 0
+  PrintInfo(0)
+  while True:
+    print("[orange1](A = Go back a page) (D = Go to the next page) (ENTER = Go back)[/orange1]")
+    browserpageindex = input("").lower()
+    if browserpageindex == "a" and indexedvariable > "0":
+      cls()
+      indexedvariable = indexedvariable-5
+      PrintInfo(indexedvariable)
+    if browserpageindex == "d":
+      cls()
+      indexedvariable = indexedvariable+5
+      PrintInfo(indexedvariable)
+    else:
+      runtime()
+  runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
   cls()
@@ -63,7 +96,8 @@ def runtime():     # Main function, used to run everything and piece it all toge
   print("[orange1]Please select an action: \n(1: Server Browser) (2: Coming Soon) (3: Credits)[/orange1]")
   inputinfo = input("")
   if inputinfo == "1":
-    print("serverbrowser")
+    cls()
+    ShowBrowser()
   if inputinfo == "2":
     print("Coming Soon (WIP)")
   if inputinfo == "3":
