@@ -87,6 +87,7 @@ def ShowBrowser():
       PrintInfo(indexedvariable)
     else:
       runtime()
+      break
   runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
