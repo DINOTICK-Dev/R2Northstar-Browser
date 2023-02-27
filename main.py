@@ -89,7 +89,6 @@ def ShowBrowser():
       break
       runtime()
     else:
-      cls()
       break
       ShowBrowser()
 
