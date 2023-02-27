@@ -96,7 +96,7 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
       cls()
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
-    elif int(indexedvariable/5) > int(servercount/5):     # If you try to go to an empty page, it won't let you
+    elif int(indexedvariable/5) > int(servercount/5):
       indexedvariable = 0
       PrintInfo(indexedvariable)
     elif browserpageindex == "":
