@@ -70,14 +70,14 @@ def PrintInfo(serverpage):     # Gets information on the server using a nifty in
         serverpass = "[Password Protected]"
       else:
         serverpass = ""
-      print("[orange1]Name: "+serverdict[x]["name"] + "    " + serverpass+"[/orange1]")
+      print("[orange1]Name: "+serverdict[x]["name"] + "[/orange1]    [bright_cyan]" + serverpass+"[bright_cyan]")
       print("[orange1]Playercount: [" + str(serverdict[x]["playerCount"])+"/"+str(serverdict[x]["maxPlayers"])+"][/orange1]")
       try:
         print("[orange1]Region: " + serverdict[x]["region"]+"[/orange1]")
       except:
         print("[orange1]Region: Unkown[/orange1]")
       print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
-      print("[orange1]=================[/orange1]")
+      print("[bold orange1]=================[/bold orange1]")
   except:
     pass
 
@@ -95,6 +95,9 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
     if browserpageindex == "d":
       cls()
       indexedvariable = indexedvariable+5
+      PrintInfo(indexedvariable)
+    elif int(indexedvariable/5) > int(servercount/5):     # If you try to go to an empty page, it won't let you
+      indexedvariable = 0
       PrintInfo(indexedvariable)
     elif browserpageindex == "":
       break
