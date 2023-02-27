@@ -45,6 +45,12 @@ def RefreshAll():     # Lazy refresh function I made that basically just runs th
     print("[red]There was an error obtaining server-based information.[/red]")
     ErrorMSG(2)
 
+def ShowComingSoon():
+  print("[orange1]Coming soon! Make sure to check back on the github[/orange1] [bright_black](https://github.com/DINOTICK-Dev/R2Northstar-Browser)[/bright_black]")
+  print("[bold orange1]Press enter to go back[/bold orange1]")
+  input("")
+  runtime()
+
 
 def ShowCredits():     # Could use some cleaning up
   print("[orange1]Made by DINOTICK[/orange1]")
@@ -109,7 +115,8 @@ def runtime():     # Main function, used to run everything and piece it all toge
     cls()
     ShowBrowser()
   if inputinfo == "2":
-    print("Coming Soon (WIP)")
+    cls()
+    ShowComingSoon()
   if inputinfo == "3":
     cls()
     ShowCredits()
