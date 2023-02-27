@@ -86,7 +86,7 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
       cls()
       indexedvariable = indexedvariable-5
       PrintInfo(indexedvariable)
-    if browserpageindex == "d" and int(servercount/5) < indexedvariable:
+    if browserpageindex == "d":
       cls()
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
