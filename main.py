@@ -89,7 +89,7 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
     elif browserpageindex == "":
       break
       runtime()
-    else:
+    else:     # Exits the ui and opens the main ui instead
       break
       ShowBrowser()
   
