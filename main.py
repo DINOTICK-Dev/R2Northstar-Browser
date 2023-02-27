@@ -48,6 +48,7 @@ def RefreshAll():     # Lazy refresh function I made that basically just runs th
 
 def ShowCredits():     # Could use some cleaning up
   print("[orange1]Made by DINOTICK[/orange1]")
+  print("[green]Website:  https://dinotick.github.io[/green]")
   print("[red]Youtube:  https://www.youtube.com/@dinotick[/red]")
   print("[bright_black]Github:  https://github.com/DINOTICK-Dev[/bright_black]")
   print("[dodger_blue2]Discord:  DINOTICK#6969[/dodger_blue2]")
@@ -91,7 +92,6 @@ def ShowBrowser():
     else:
       break
       ShowBrowser()
-
   
   runtime()
 
