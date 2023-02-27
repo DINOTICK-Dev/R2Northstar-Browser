@@ -77,7 +77,7 @@ def ShowBrowser():
   while True:
     print("[orange1](A = Go back a page) (D = Go to the next page) (ENTER = Go back)[/orange1]")
     browserpageindex = input("").lower()
-    if browserpageindex == "a" and indexedvariable > "0":
+    if browserpageindex == "a" and indexedvariable > 0:
       cls()
       indexedvariable = indexedvariable-5
       PrintInfo(indexedvariable)
@@ -85,9 +85,10 @@ def ShowBrowser():
       cls()
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
-    else:
+    elif browserpageindex == "":
       runtime()
       break
+
   runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
