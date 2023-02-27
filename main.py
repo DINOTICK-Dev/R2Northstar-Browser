@@ -56,7 +56,7 @@ def ShowCredits():     # Could use some cleaning up
   input("")
   runtime()
 
-def PrintInfo(serverpage):
+def PrintInfo(serverpage):     # Gets information on the server using a nifty indexing thingy
   print("[orange1]===============[/orange1]")
   for x in range(serverpage, serverpage+5):
     if serverdict[x]["hasPassword"] == True:
@@ -72,7 +72,7 @@ def PrintInfo(serverpage):
     print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
     print("[orange1]=================[/orange1]")
 
-def ShowBrowser():
+def ShowBrowser():     # Serverbrowser GUI :skull:
   indexedvariable = 0
   PrintInfo(0)
   while True:
