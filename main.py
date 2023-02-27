@@ -86,6 +86,8 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
   PrintInfo(0)
   while True:
     print("[orange1]Page: ["+str(int(indexedvariable/5))+"/"+str(int(servercount/5))+"][/orange1]")
+    print("[orange1]Servercount: "+str(int(servercount))+"[/orange1]")
+    print("[orange1]Playercount: ["+str(int(totalplayers))+"/"+str(int(maxplayers))+"][/orange1]")
     print("[orange1](A = Go back a page) (D = Go to the next page) (ENTER = Go back)[/orange1]")
     browserpageindex = input("").lower()
     if browserpageindex == "a" and indexedvariable > 0:
@@ -123,5 +125,7 @@ def runtime():     # Main function, used to run everything and piece it all toge
   if inputinfo == "3":
     cls()
     ShowCredits()
+  elif inputinfo == "":
+    sys.exit()
 
 runtime()     # Starts the script pretty much
