@@ -7,16 +7,11 @@ def cls():
 
 r = requests.get("https://northstar.tf/client/servers")     # get the server list
 
-# For context, the dict makes a parsable dictionary just for you
 global serverdict 
 serverdict = {}
 
 def ServerGet():
   servnum = 0
-  # global serverregion
-  # global serverpass
-  # global servername
-  # global servermap
   if r.status_code == 200:
     for server in r.json():    # iterate through server list
 
