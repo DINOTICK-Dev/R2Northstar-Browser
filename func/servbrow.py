@@ -7,7 +7,7 @@ def cls():
 
 r = requests.get("https://northstar.tf/client/servers")     # get the server list
 
-# For context, the dict makes a parsable dictionary just for u <3
+# For context, the dict makes a parsable dictionary just for you
 global serverdict 
 serverdict = {}
 
@@ -21,24 +21,7 @@ def ServerGet():
     for server in r.json():    # iterate through server list
 
       serverdict[servnum] = server
-      servnum += 1
-
-      
-      # Previously used code that I don't need but I'm keeping just in case lol      
-      """
-      try:    # This is here because servers with passwords don't give a region
-        serverregion = server["region"]
-      except:
-        serverregion = ["Unknown"]
-        
-      if server["hasPassword"] == True:    # Password protection :)
-        serverpass = "[Password Protected]"
-      else:
-        serverpass = ""  
-      
-      servername = server["name"]
-      servermap = server["map"]
-      """
+      servnum += 1  
 
   else:
     print("Error gathering information")
