@@ -58,31 +58,35 @@ def ShowCredits():     # Could use some cleaning up
 
 def PrintInfo(serverpage):     # Gets information on the server using a nifty indexing thingy
   print("[orange1]===============[/orange1]")
-  for x in range(serverpage, serverpage+5):
-    if serverdict[x]["hasPassword"] == True:
-      serverpass = "[Password Protected]"
-    else:
-      serverpass = ""
-    print("[orange1]Name: "+serverdict[x]["name"] + "    " + serverpass+"[/orange1]")
-    print("[orange1]Playercount: [" + str(serverdict[x]["playerCount"])+"/"+str(serverdict[x]["maxPlayers"])+"][/orange1]")
-    try:
-      print("[orange1]Region: " + serverdict[x]["region"]+"[/orange1]")
-    except:
-      print("[orange1]Region: Unkown[/orange1]")
-    print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
-    print("[orange1]=================[/orange1]")
+  try:
+    for x in range(serverpage, serverpage+5):
+      if serverdict[x]["hasPassword"] == True:
+        serverpass = "[Password Protected]"
+      else:
+        serverpass = ""
+      print("[orange1]Name: "+serverdict[x]["name"] + "    " + serverpass+"[/orange1]")
+      print("[orange1]Playercount: [" + str(serverdict[x]["playerCount"])+"/"+str(serverdict[x]["maxPlayers"])+"][/orange1]")
+      try:
+        print("[orange1]Region: " + serverdict[x]["region"]+"[/orange1]")
+      except:
+        print("[orange1]Region: Unkown[/orange1]")
+      print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
+      print("[orange1]=================[/orange1]")
+  except:
+    pass
 
 def ShowBrowser():     # Serverbrowser GUI :skull:
   indexedvariable = 0
   PrintInfo(0)
   while True:
+    print("[orange1]Page: ["+str(int(indexedvariable/5))+"/"+str(int(servercount/5))+"][/orange1]")
     print("[orange1](A = Go back a page) (D = Go to the next page) (ENTER = Go back)[/orange1]")
     browserpageindex = input("").lower()
     if browserpageindex == "a" and indexedvariable > 0:
       cls()
       indexedvariable = indexedvariable-5
       PrintInfo(indexedvariable)
-    if browserpageindex == "d":
+    if browserpageindex == "d" and int(servercount/5) < indexedvariable:
       cls()
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
@@ -93,7 +97,7 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
       break
       ShowBrowser()
 
-runtime()
+  runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
   cls()
