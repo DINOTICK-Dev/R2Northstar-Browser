@@ -92,8 +92,8 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
     else:
       break
       ShowBrowser()
-  
-  runtime()
+
+runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
   cls()
