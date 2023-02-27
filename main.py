@@ -86,9 +86,10 @@ def ShowBrowser():
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
     elif browserpageindex == "":
-      runtime()
       break
+      runtime()
 
+  
   runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
