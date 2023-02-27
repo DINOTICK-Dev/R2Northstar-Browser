@@ -88,6 +88,10 @@ def ShowBrowser():
     elif browserpageindex == "":
       break
       runtime()
+    else:
+      cls()
+      break
+      ShowBrowser()
 
   
   runtime()
