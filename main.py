@@ -45,12 +45,6 @@ def RefreshAll():     # Lazy refresh function I made that basically just runs th
     print("[red]There was an error obtaining server-based information.[/red]")
     ErrorMSG(2)
 
-def ShowComingSoon():
-  print("[orange1]Coming soon! Make sure to check back on the github[/orange1] [bright_black](https://github.com/DINOTICK-Dev/R2Northstar-Browser)[/bright_black]")
-  print("[bold orange1]Press enter to go back[/bold orange1]")
-  input("")
-  runtime()
-
 
 def ShowCredits():     # Could use some cleaning up
   print("[orange1]Made by DINOTICK[/orange1]")
@@ -64,30 +58,24 @@ def ShowCredits():     # Could use some cleaning up
 
 def PrintInfo(serverpage):     # Gets information on the server using a nifty indexing thingy
   print("[orange1]===============[/orange1]")
-  try:
-    for x in range(serverpage, serverpage+5):
-      if serverdict[x]["hasPassword"] == True:
-        serverpass = "[Password Protected]"
-      else:
-        serverpass = ""
-      print("[orange1]Name: "+serverdict[x]["name"] + "[/orange1]    [bright_cyan]" + serverpass+"[bright_cyan]")
-      print("[orange1]Playercount: [" + str(serverdict[x]["playerCount"])+"/"+str(serverdict[x]["maxPlayers"])+"][/orange1]")
-      try:
-        print("[orange1]Region: " + serverdict[x]["region"]+"[/orange1]")
-      except:
-        print("[orange1]Region: Unkown[/orange1]")
-      print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
-      print("[bold orange1]=================[/bold orange1]")
-  except:
-    pass
+  for x in range(serverpage, serverpage+5):
+    if serverdict[x]["hasPassword"] == True:
+      serverpass = "[Password Protected]"
+    else:
+      serverpass = ""
+    print("[orange1]Name: "+serverdict[x]["name"] + "    " + serverpass+"[/orange1]")
+    print("[orange1]Playercount: [" + str(serverdict[x]["playerCount"])+"/"+str(serverdict[x]["maxPlayers"])+"][/orange1]")
+    try:
+      print("[orange1]Region: " + serverdict[x]["region"]+"[/orange1]")
+    except:
+      print("[orange1]Region: Unkown[/orange1]")
+    print("[orange1]Map: " + serverdict[x]["map"] + "[/orange1]")
+    print("[orange1]=================[/orange1]")
 
 def ShowBrowser():     # Serverbrowser GUI :skull:
   indexedvariable = 0
   PrintInfo(0)
   while True:
-    print("[orange1]Page: ["+str(int(indexedvariable/5))+"/"+str(int(servercount/5))+"][/orange1]")
-    print("[orange1]Servercount: "+str(int(servercount))+"[/orange1]")
-    print("[orange1]Playercount: ["+str(int(totalplayers))+"/"+str(int(maxplayers))+"][/orange1]")
     print("[orange1](A = Go back a page) (D = Go to the next page) (ENTER = Go back)[/orange1]")
     browserpageindex = input("").lower()
     if browserpageindex == "a" and indexedvariable > 0:
@@ -98,16 +86,13 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
       cls()
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
-    elif int(indexedvariable/5) > int(servercount/5):
-      indexedvariable = 0
-      PrintInfo(indexedvariable)
     elif browserpageindex == "":
       break
       runtime()
     else:
       break
       ShowBrowser()
-
+  
   runtime()
 
 def runtime():     # Main function, used to run everything and piece it all together
@@ -120,12 +105,9 @@ def runtime():     # Main function, used to run everything and piece it all toge
     cls()
     ShowBrowser()
   if inputinfo == "2":
-    cls()
-    ShowComingSoon()
+    print("Coming Soon (WIP)")
   if inputinfo == "3":
     cls()
     ShowCredits()
-  elif inputinfo == "":
-    sys.exit()
 
 runtime()     # Starts the script pretty much
