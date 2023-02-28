@@ -22,23 +22,6 @@ def ServerGet():
       serverdict[servnum] = server
       servnum += 1
 
-      
-      # Previously used code that I don't need but I'm keeping just in case lol      
-      """
-      try:    # This is here because servers with passwords don't give a region
-        serverregion = server["region"]
-      except:
-        serverregion = ["Unknown"]
-        
-      if server["hasPassword"] == True:    # Password protection :)
-        serverpass = "[Password Protected]"
-      else:
-        serverpass = ""  
-      
-      servername = server["name"]
-      servermap = server["map"]
-      """
-
   else:
     print("Error gathering information")
 
