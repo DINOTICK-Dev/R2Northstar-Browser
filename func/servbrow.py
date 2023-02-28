@@ -6,7 +6,7 @@ r = requests.get("https://northstar.tf/client/servers")     # get the server lis
 global serverdict 
 serverdict = {}
 
-def ServerGet():
+def ServerGet():     # Gets information on the server browser
   servnum = 0
   if r.status_code == 200:
     for server in r.json():    # iterate through server list
