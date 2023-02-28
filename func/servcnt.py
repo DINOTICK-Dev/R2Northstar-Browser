@@ -12,7 +12,7 @@ def ServerCountGet():     # Get servercount information
   else:
     print("Error gathering information")
 
-def refresh():
+def refresh():     # Refreshes information
   ServerCountGet()
 
 ServerCountGet()

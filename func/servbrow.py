@@ -17,7 +17,7 @@ def ServerGet():     # Gets information on the server browser
   else:
     print("Error gathering information")
 
-def refresh():
+def refresh():    # Refreshes information
   ServerGet()
   
 ServerGet()
