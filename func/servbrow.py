@@ -12,10 +12,6 @@ serverdict = {}
 
 def ServerGet():
   servnum = 0
-  # global serverregion
-  # global serverpass
-  # global servername
-  # global servermap
   if r.status_code == 200:
     for server in r.json():    # iterate through server list
 
