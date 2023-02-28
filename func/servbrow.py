@@ -1,10 +1,6 @@
 import requests
 import os
 
-
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
-
 r = requests.get("https://northstar.tf/client/servers")     # get the server list
 
 global serverdict 
