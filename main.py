@@ -88,6 +88,7 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
     print("[orange1]Page: ["+str(int(indexedvariable/5))+"/"+str(int(servercount/5))+"][/orange1]")
     print("[orange1]Servercount: "+str(int(servercount))+"[/orange1]")
     print("[orange1]Playercount: ["+str(int(totalplayers))+"/"+str(int(maxplayers))+"][/orange1]")
+    print("[orange1](R = Refresh)[/orange1]")
     print("[orange1](A = Go back a page) (D = Go to the next page) (ENTER = Go back)[/orange1]")
     browserpageindex = input("").lower()
     if browserpageindex == "a" and indexedvariable > 0:
@@ -98,15 +99,16 @@ def ShowBrowser():     # Serverbrowser GUI :skull:
       cls()
       indexedvariable = indexedvariable+5
       PrintInfo(indexedvariable)
-    elif int(indexedvariable/5) > int(servercount/5):
-      indexedvariable = 0
+    if browserpageindex == "r":
+      cls()
+      RefreshAll()
       PrintInfo(indexedvariable)
-    elif browserpageindex == "":
+    if browserpageindex == "":
       break
       runtime()
     else:
-      break
-      ShowBrowser()
+      cls()
+      PrintInfo(indexedvariable)
 
   runtime()
 
