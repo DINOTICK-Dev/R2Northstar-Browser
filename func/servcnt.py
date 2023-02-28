@@ -3,7 +3,7 @@ import os
 
 r = requests.get("https://northstar.tf/client/servers")
 
-def ServerCountGet():     # Get servercount information
+def ServerCountGet():     # Get server count information
   global servercount
   servercount = 0
   if r.status_code == 200:
@@ -12,7 +12,7 @@ def ServerCountGet():     # Get servercount information
   else:
     print("Error gathering information")
 
-def refresh():     # Refreshes information
+def refresh():
   ServerCountGet()
 
 ServerCountGet()

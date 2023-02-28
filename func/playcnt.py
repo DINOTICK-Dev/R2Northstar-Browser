@@ -3,7 +3,7 @@ import os
 
 r = requests.get("https://northstar.tf/client/servers")
 
-def PlayerCountGet():     # Get playercount information
+def PlayerCountGet():     # Get player count information
   global totalplayers
   global maxplayers
   totalplayers = 0
@@ -15,7 +15,7 @@ def PlayerCountGet():     # Get playercount information
       totalplayers = totalplayers+playercount
       maxplayers = maxplayers+playermax
 
-def refresh():     # Refreshes information
+def refresh():
   PlayerCountGet()
 
 PlayerCountGet()
