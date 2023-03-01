@@ -81,7 +81,7 @@ def PrintInfo(serverpage):     # Gets information on the server using a nifty in
   except:
     pass
 
-def ShowBrowser():     # Serverbrowser GUI :skull:
+def ShowBrowser():     # Serverbrowser CLI :skull:
   indexedvariable = 0
   PrintInfo(0)
   while True:
